@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 70vh;
+            height: 70vh;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><a href="/login">login</a></h2>
+        <h2><a href="/signup">signup</a></h2>
+        <% for(let a of findPost) { %>
+            <div>
+                <a href="/<%= a._id %>/sign_in_required"><img src="<%= a.link %>" alt="" width="<%= imgSize %> "></a>
+                <strong><p>Uploader: <%= a.name %></p></strong>
+                <strong><p>Address: <%= a.address %></p></strong>
+                <strong><p>Description: <%= a.description %></p></strong>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

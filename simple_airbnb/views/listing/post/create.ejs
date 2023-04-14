@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+</head>
+<body>
+    <h1>Create Post</h1>
+    <form action="/create" method="POST">
+        <div>
+            <label for="list">List</label>
+            <select name="listType" id="listType">
+                <option value="PARK">PARK</option>
+                <option value="POOL">POOL</option>
+                <option value="ISLAND">ISLAND</option>
+                <option value="BEACH">BEACH</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="name">Uploader: </label>
+            <input type="text" name="name" id="name" placeholder="Name of Uploader" required>
+        </div>
+        <br>
+        <div>
+            <label for="link">Put image URL here: </label>
+            <input type="text" name="link" id="link" placeholder="image URL" required>
+        </div>
+        <br>
+        <div>
+            <label for="address">Address: </label>
+            <input type="text" name="address" id="address" placeholder="address" required>
+        </div>
+        <br>
+        <div>
+            <label for="description">Description: </label>
+            <input type="text" name="description" id="description" placeholder="description" required>
+        </div>
+        <br>
+        <div>
+            <label for="fullDescription">Full Description: </label>
+            <input type="text" name="fullDescription" id="fullDescription" placeholder="Full Description" required>
+        </div>
+        <button>Post</button>
+    </form>
+    <a href="/home">Back</a>
+</body>
+</html>

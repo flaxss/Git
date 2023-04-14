@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsMh1ez5P5I8rTbJDelGvaWNY6t_hlEt4&callback=initMap">
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 70vh;
+            height: 70vh;
+        }
+        img {
+            width: 100%;
+        }
+        #map {
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Details</h1>
+        <a href="/home">Back</a>
+        <a href="/details/<%= findPost._id %>/review">Add Review</a>
+
+        <div class="display">
+            <img src="<%= findPost.link %>" alt="" >
+            <h4>Uploader: <%= findPost.name %></h4>
+            <h4>Address: <%= findPost.address %></h4>
+            <h4>Description: <%= findPost.description %></h4>
+            <h4>Full Description: <%= findPost.fullDescription %></h4>
+            <h4>Posted on: <%= findPost.createdAt %></h4>
+        </div>
+        <!-- create review -->
+        <h4>Reviews:</h4>
+        <% if(findPost.review == '') {%>
+            <p>No reviews yet</p>
+        <% }else{ %>
+            <% for(let a of findPost.review) {%>
+                <p><%= a %></p>
+            <% } %> 
+        <% } %> 
+        <h2>Location</h2>
+        <div class="map" id="map"></div>
+    </div>
+    <script>
+        function initMap(){
+            let trece = {lat: 14.2866478, lng: 120.861378}
+            let map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 15, center: trece}
+            );
+            let marker = new google.maps.Marker({position: trece, map: map})
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+nav {
+    font-size: 20px;
+    /* background-color: rgb(211, 186, 47); */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    height: fit-content;
+}
+nav div {
+    /* display: none; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    float: left;
+    /* background-color: aqua; */
+    width: auto;
+}
+nav div h1 {
+    text-align: center;
+    padding: 5px;
+    color: rgb(216, 167, 77);
+    letter-spacing: 1.2rem;
+    border: 5px solid rgb(216, 167, 77);
+    transition: 0.3s;
+}
+nav div h1:hover {
+    color: rgb(255, 255, 255);
+    border: 5px solid rgb(255, 255, 255);
+}
+nav ul {
+    /* background-color: rgb(170, 170, 170); */
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    /* margin: 5px; */
+}
+nav ul li {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 5px;
+    /* background-color: rgb(139, 190, 156); */
+    height: fit-content;
+}
+/* nav ul li:hover {
+    color: rgb(233, 186, 115);
+    background-color: rgb(20, 112, 81);
+} */
+nav ul li a {
+    background-color: rgb(41, 100, 61);
+    text-decoration: none;
+    padding: 5px;
+    color: aliceblue;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+nav ul li a:hover {
+    color: rgb(233, 186, 115);
+    background-color: rgb(20, 112, 81);
+}
+main {
+    /* background-color: aquamarine; */
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 100px;
+}
+.left-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: bisque; */
+    /* text-align: center; */
+}
+.left-content h2 a{
+    font-size: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(184, 135, 76);
+}
+.left-content p {
+    font-size: 20px;
+    color: beige;
+}
+.right-content {
+    width: 50%;
+    min-width: 500px;
+    /* background-color: blue; */
+    justify-self: center;
+    align-self: center;
+}
+.right-content h3 {
+    font-size: 40px;
+    text-decoration:overline underline;
+    color: rgb(240, 65, 65);
+}
+.right-content p {
+    font-size: 20px;
+    text-align: justify;
+    color: rgb(182, 226, 226);
+    background-color: rgba(115, 133, 133, 0.5);
+    padding: 10px;
+}
+footer {
+    background-color: rgb(238, 234, 225);
+    /* height: 100px;
+    min-height: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.foot-content a button {
+    background-color: rgb(9, 180, 231);
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+    color: white;
+    font-weight: bolder;
+}
+.foot-content span a {
+    text-decoration: none;
+}
+.foot-content a button:hover {
+    color: black;
+    background-color: aqua;
+}
+
+@media (min-width: 1201px) {
+    main {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    main {
+        margin: 30px 0;
+    /* }
+    main {
+        background-color: aliceblue;
+    } */
+}
+
+@media (max-width: 1024px) {
+    nav div {
+        display: none;
+    }
+    nav ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main {
+        margin: 40px 0;
+    }
+    .left-content {
+        width: 90%;
+        margin-bottom: 5%;
+        /* background-color: antiquewhite; */
+    }
+    .right-content {
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        background-color: #241c07;
+        width: 100%;
+    }
+    nav ul {
+        display: block;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        margin: 0px;
+        transition: 0.3s;
+    }
+    /* nav ul li:hover {
+        background-color: #493d1e;
+    } */
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        background: none;
+    }
+    nav ul li a:hover {
+        background-color: #493d1e;
+    }
+    main {
+        margin: 50px 0;
+        padding: 0 5px;
+    }
+    .left-content {
+        width: 100%;
+        text-align: center;
+    }
+}

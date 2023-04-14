@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 70vh;
+            height: 70vh;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Homepage</h1>
+        <form action="logout" method="POST">
+            <button>logout</button>
+        </form>
+        <a href="/create">Create Post</a>
+        <% for(let a of findPost) { %>
+            <div>
+                <a href="/details/<%= a._id %>/more_details"><img src="<%= a.link %>" alt=""></a>
+                <p>List Type: <%= a.listType %></p>
+                <p>Uploader: <%= a.name %></p>
+                <p>Address: <%= a.address %></p>
+                <p>Description: <%= a.description %></p>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<%- include('include/header') %>
+    <title>Search</title>
+    <script src="/js/jquery.min.js"></script>
+</head>
+<body>
+    <main>
+        <div class="content" style="height: 100vh;">
+            <div id="myModal" class="modal fade" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-success">
+                            <h5 class="modal-title text-white">Result</h5>
+                            <a href="/" class="text-decoration-none text-white">&times;</a>
+                        </div>
+                        <div class="modal-body table">
+                            <% if(result != null) { %>
+                                <h2>Found!</h2>
+                                <p>You are registered to <b><%- result.service %></b></p>
+                                <p>Status: <b><%- result.status.toUpperCase() %></b></p>
+                                <% if(result.status == 'completed'){ %>
+                                    <p>You are not eligible to register until <b><%- format %></b></p>
+                                <% } %>
+                            <% } else { %>
+                                <p class="text-center">The reference number does not exist. You may check our website and choose which service you want to apply for.</p>
+                                <p class="text-center"><b>Note!</b>you can check your email for confirmation if you already submitted your information</p>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#myModal").modal('show');
+            });
+        </script>
+    </main>
+</body>
+</html>
